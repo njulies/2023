@@ -25,13 +25,15 @@ def vatcal():
     price1=int(input("Price 1 : "))
     price2=int(input("Price 2 : "))
     vat=7
-    result=(f"ราคารวม Vat : {(price1+price2)+((price1+price2)*7/100)} บาท")
+    result=(f"ราคาสินค้ารวม Vat : {(price1+price2)+((price1+price2)*7/100)} บาท")
     return result
 def pricecal():
-    price1=int(input("Price 1st Product : "))
-    price2=int(input("Price 2nd Product : "))
-    return vatcal(price1+price2)
-
+    amount=int(input("จำนวนสินค้า : "))
+    totalprice=0
+    for i in range(amount):
+        price=int(input("ราคาสินค้า %d : "%(i+1)))
+        totalprice=totalprice+price
+    return print(f"ราคาสินค้า : {totalprice} THB")
 print(login())
 
 
